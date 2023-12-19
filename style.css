@@ -753,6 +753,11 @@ font-size: 20px;
         margin-right: auto;
     }
 
+    .socials i:hover {
+        color: red;
+        cursor: pointer;
+    }
+
     /* Estilos para o botão WhatsApp flutuante */
     #whatsapp-button {
         position: fixed;
