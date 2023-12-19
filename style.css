@@ -1,0 +1,785 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&family=Poppins:ital,wght@0,300;1,200&family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz@6..12&family=Poppins:ital,wght@0,300;1,200&family=Quicksand:wght@700&family=Roboto+Slab&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(img/pneu03.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+body::after {
+    content: '';
+    filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+}
+/* Navegation Scroll Nav Styles */
+.navegation-scroll-nav ul {
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    background-color: rgba(20, 20, 20, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    animation: laser 4s infinite;
+    border-bottom: 2px solid red;
+    box-shadow: 0px 0px 5px 2px red;
+    z-index: 5;
+}
+
+
+
+.navegation-scroll-nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 1.5rem;
+    transition: 200ms ease-in;
+    position: relative;
+}
+
+.navegation-scroll-nav ul li a:before {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 0px;
+    height: 1px;
+    transition: all 1.5s ease;
+}
+
+
+
+a {
+    letter-spacing: 0;
+    position: relative;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+
+a:hover:after,
+a:hover:before {
+    backface-visibility: hidden;
+    border-color: #fff;
+    transition: width 350ms ease-in-out;
+    width: 70%;
+}
+
+a:hover:before {
+    bottom: auto;
+    top: 0;
+    width: 70%;
+}
+
+.glow-on-hover {
+    font-family: 'Roboto';
+    font-size: 20px;
+    width: 160px;
+    height: 40px;
+    border: none;
+    color: #fff;
+    background: #25D366;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+video {
+    border-radius: 30px;
+    width: 900px;
+    height: 300px;
+}
+
+
+@keyframes laser {
+    0% {
+        box-shadow: 0px 0px 5px 2px red;
+    }
+    50% {
+        box-shadow: 0px 0px 15px 5px red;
+    }
+    100% {
+        box-shadow: 0px 0px 5px 2px red;
+    }
+}
+
+.test,
+.test-2 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.test-2 {
+    margin-top: 12%;
+    height: 70%;
+}
+
+.txt-1 {
+    font-family: 'Prompt', sans-serif;
+    opacity: 1;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+}
+
+video {
+    width: 40%;
+    height: 60%;
+    max-width: 80%;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 90px;
+}
+
+.services {
+    font-size: 100px;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px;
+    animation: efeito-letra 2s infinite;
+    
+}
+
+@keyframes efeito-letra {
+    0% {
+        transform: translateY(0);
+        opacity: 0.5;
+        filter: saturate(100%);
+    }
+    50% {
+        transform: translateY(-20px);
+        opacity: 1;
+        filter: saturate(150%);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 0.5;
+        filter: saturate(100%);
+    }
+}
+
+.container {
+    background: linear-gradient(red, black);
+    height: 370px;
+    width: 20%;
+    border-radius: 12px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    color: #fff;
+}
+
+.img-pneu {
+    width: 180px;
+    height: 180px;
+    margin-bottom: 10px;
+}
+
+.content .img-pneu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content p {
+    color: #fff;
+    font-size: 1.1rem;
+}
+p{
+    margin-bottom: 15px ;
+}
+
+.loc {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.img-icon-loc {
+    margin-bottom: 30px;
+}
+
+
+
+/* NOSSOS serviços*/
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    font-size: 2em;
+   
+}
+
+.container-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+
+
+.row-serv {
+    width: 100%;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+ 
+   
+}
+
+.col-lg-4 {
+    flex: 0 0 auto;
+    width: 33.33333333%;
+}
+
+
+.process-img {
+    position: relative;
+}
+
+#img-car {
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:1;
+}
+
+#img-backcar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+summary {
+    list-style-type: none;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 16px;
+    background: rgba(200, 200, 200, 0.5) url("midia/mais.png") no-repeat right;
+    background-size: 20px 20px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.form_pag-area {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+}
+
+.form_pag-area {
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3); /* Sombra suave com mais opacidade */
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-form-pag .icons-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+
+}
+
+.row-form-pag {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    box-shadow: solid 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.8); /* Cor de fundo com opacidade maior para o efeito de vidro */
+    width: 90%;
+    height: 50%;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.img-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 10px;
+    border-right: 1px solid gray;
+}
+
+.col-lg-6r{
+    width: 100%;
+    height: 100%;
+}
+.contact-right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 600px;
+}
+
+.contact-map{
+    border-radius: 10px;
+}
+
+.contact-right .contact-map{
+    padding-top: 60px;
+    width: 55%;
+    height: 80%;
+}
+
+.titulo-sobre{
+    padding: 5px;
+    margin-top: 30px;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.caixa-sobre-nos{
+border: 10px;
+color: #fff;
+font-family: 'Poppins', sans-serif;
+font-size: 20px;
+}
+
+
+.description{
+    background: rgba(255, 255, 255, 0.9); /* Cor de fundo com opacidade maior para o efeito de vidro */
+   color: black;
+}
+
+.sobre-nos{
+    margin-top: 30px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); /* Efeito de desfoque */
+    box-shadow: 0px 0px 20px #000000e5; /* Sombra suave com mais opacidade */
+    transform: translateZ(30px); /* Efeito 3D de deslocamento */
+    transition: background 0.3s ease-in-out; /* Transição suave para a cor de fundo ]*/
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    border-radius: 5px;}
+    
+ 
+ /* Footer Socials */
+.socials {
+	display: flex;
+}
+
+.socials i {
+	margin: 0 20px;
+	font-size: 1.7rem;
+	transition: all 300ms ease;
+}
+
+.socials i:hover {
+	color: var(--default-green);
+	cursor: pointer;
+}
+
+#footer {
+    margin-top: 50px ;
+	background: black;
+    background-color: rgba(20, 20, 20, 0.95);
+	color:  #919496;;
+
+    
+}
+
+.footer-logo{
+    margin-top: 30px ;
+    width: 300px;
+    height: 150px;
+}
+
+#footer .footer-content {
+	display: flex;
+	width: 60%;
+	margin: auto;
+}
+
+#footer .footer-content .footer-menu {
+	margin: 0 60px;
+	list-style: none;
+}
+
+#footer .footer-content .footer-menu .footer-menu-item {
+	margin: 25px 0;
+	transition: all 300ms ease;
+
+}
+
+#footer .footer-content .footer-menu .footer-menu-item:hover {
+	color:red;
+	cursor: pointer;
+}
+
+#footer .footer-content .footer-menu p {
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #919496;
+	font-size: 0.8rem;
+}
+
+/* Footer Socials */
+.socials {
+    
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.socials i {
+	margin: 0 20px;
+	font-size: 1.7rem;
+	transition: all 300ms ease;
+}
+
+.socials i:hover {
+	color: red;
+	cursor: pointer;
+}
+
+/* Footer Info */
+.footer-info {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	width: 60%;
+	margin: auto;
+	font-weight: bold;
+	color: #919496;
+	font-size: 0.75rem;
+	padding-top: 50px;
+ 
+}
+
+.footer-info .footer-info-items {
+	display: flex;
+	list-style: none;
+}
+
+.footer-info .footer-info-items .footer-info-item {
+	margin: 0 10px;
+	transition: all 300ms ease;
+}
+
+.footer-info .footer-info-items .footer-info-item:hover {
+	color: red;
+	cursor: pointer;
+}
+
+.footer-info .rights .country {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.footer-info .rights .country p {
+	transition: all 300ms ease;
+}
+
+.footer-info .rights .country p:hover {
+	color: red;
+	cursor: pointer;
+}
+
+.footer-info .rights .country .brazil-flag {
+	height: 20px;
+	width: auto;
+	display: inline-block;
+	margin-left: 10px;
+}
+
+.img-br{
+    width: 50px;
+    margin-left: 30px;
+}
+
+/* Estilo para o botão flutuante do WhatsApp */
+#whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px; /* Ajuste conforme o tamanho desejado para a sua imagem */
+    height: 60px; /* Ajuste conforme o tamanho desejado para a sua imagem */
+    background-color: #25D366; /* Cor verde do WhatsApp */
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2), 0 0 40px #25D366, 0 0 80px #25D366; /* Adiciona um efeito de "laser" */
+    animation: pulse 1.5s infinite; /* Efeito pulsante */
+  }
+  
+
+  #whatsapp-button img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+  
+  #whatsapp-button:hover {
+    background-color: #128C7E; /* Cor de destaque ao passar o mouse */
+    animation: none; /* Desativar a animação ao passar o mouse */
+  }
+  
+  /* Animação de pulso */
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.2);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  
+  .caixa-sobre-nos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 140px;
+    width: 80%;
+    height: 60%;
+    background:rgba(20, 20, 20, 0.925);
+}
+
+
+@media screen and (max-width: 768px) {
+    /* Estilos para a barra de navegação */
+    .navegation-scroll-nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navegation-scroll-nav ul li {
+        margin-bottom: 10px;
+    }
+
+    /* Estilos para a seção de vídeo */
+    .section-1 {
+        padding: 30px 0;
+    }
+
+    .section-1 video {
+        width: 100%;
+        height: auto;
+        border-radius: 15px;
+    }
+
+    /* Estilos para a seção de pneus */
+    .row {
+        margin-top: 30px;
+    }
+
+
+    .container {
+        width: 100%;
+    }
+
+    /* Estilos para a seção de serviços */
+    .process-item {
+        margin-bottom: 15px;
+    }
+
+    /* Estilos para os ícones */
+    .form_pag-area {
+        padding: 15px 0;
+    }
+
+    .container-form-pag .icons-img {
+        width: 100%;
+    }
+
+    /* Estilos para o módulo de mapa */
+    .col-lg-6r {
+        width: 100%;
+    }
+
+    .col-lg-4 {
+        width: 100%;
+    }
+
+.contact-right{
+    width: 100%;
+}
+    
+    .contact-map {
+        width: 100%;
+       
+    }
+
+    /* Estilos para a seção "Sobre Nós" */
+    .caixa-sobre-nos {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    /* Estilos para o container-2 e row-serv */
+    .container-2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .row-serv {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+
+
+    /* Estilos para o rodapé */
+
+    /* Estilos para o botão WhatsApp flutuante */
+    #whatsapp-button {
+        bottom: 10px;
+        right: 10px;
+    }
+}
+
+/* Adicione a regra de mídia para telas menores */
+@media screen and (max-width: 768px) {
+    /* Estilos gerais para o footer */
+    #footer {
+    
+      
+        
+    }
+
+    .footer-content {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .footer-logo {
+        margin-bottom: 15px;
+        align-items: center;
+    }
+
+    /* Estilos para a seção de informações e menu */
+    .footer-info {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+     
+    }
+
+    .footer-menu {
+        margin-bottom: 15px;
+       margin-right: 300px;
+    }
+
+    .footer-menu-item {
+        display: flex;
+        margin-bottom: 10px;
+    }
+
+    .socials {
+        
+        margin-bottom: 15px;
+    }
+
+    /* Estilos para a seção de informações adicionais */
+    .footer-info-items {
+        margin-bottom: 15px;
+    }
+
+    .footer-info-item {
+        display: flex;
+        align-items: center;
+        
+        margin-bottom: 10px;
+    }
+
+   
+
+    .img-br{
+        margin-top: 15px;
+        margin-left: 250px;
+    }
+}

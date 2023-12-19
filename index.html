@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/angular-simple-logger/0.1.7/angular-simple-logger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-google-maps/2.5.0/angular-google-maps.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous"></script>
+    <script src="alphacentroautomotivo-d83aa-firebase-adminsdk-84v68-2d1fb2812b.json"></script>
+    <title>AlphaPneus</title>
+  </head>
+
+  <body ng-controller="MyController">
+
+    <header class="scroll-header">
+      <nav class="navegation-scroll-nav">
+        <ul>
+          <li>
+            <img class="img" ng-src="{{ logoSrc }}" alt="logo">
+          </li>
+          <li ng-repeat="menuItem in menuItems">
+            <a href="#">{{ menuItem }}</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="section-1">
+        <div class="test-2">
+          <video width="500" height="500" controls>
+            <source ng-src="{{ videoSource }}" type="midia/WhatsApp Video 2023-11-13 at 23.54.12.mp4">
+            Seu navegador não suporta a tag de vídeo.
+          </video>
+        </div>
+      </section>
+    </main>
+
+    <div class="row">
+      <div ng-repeat="pneu in pneus" class="container">
+        <div class="content">
+          <h1>{{ pneu.title }}</h1>
+          <img class="img-pneu" ng-src="{{ pneu.imgSrc }}" alt="{{ pneu.title }}">
+          <p>{{ pneu.description }}</p>
+          <button class="glow-on-hover" ng-click="abrirWhatsApp(pneu.title)">WhatsApp</button>
+        </div>
+      </div>
+    </div>
+
+    <br><br>
+
+    <div class="section-title">
+      <h2 class="services">NOSSOS SERVIÇOS</h2>
+    </div>
+    <div class="container-2">
+      <div class="row-serv">
+        <div class="col-lg-4">
+          <div class="process-item" ng-repeat="servico in servicos">
+            <details class="collapse">
+              <summary class="title">{{ servico.title }}</summary>
+              <div class="description">{{ servico.description }}</div>
+            </details>
+          </div>
+        </div>
+        <div class="col-lg-4 top">
+          <div class="process-item">
+            <div class="process-img">
+              <img id="img-car" loading="lazy" ng-src="{{ carImgSrc }}" alt="Car Image">
+              <img id="img-backcar" loading="lazy" ng-src="{{ pneuImgSrc }}" alt="Back Car Image">
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="process-item" ng-repeat="servico in maisServicos">
+            <details class="collapse">
+              <summary class="title">{{ servico.title }}</summary>
+              <div class="description">{{ servico.description }}</div>
+            </details>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+    <!-- Seção de ícones -->
+
+    <section class="form_pag-area">
+      <div class="container-form-pag">
+        <div class="row-form-pag">
+          <div ng-repeat="icon in icons" class="col-lg-2">
+            <div class="img-div">
+              <img id="{{ 'f' + ($index + 1) }}" class="icons-img" ng-src="{{ icon.src }}" alt="Icon Image"
+                loading="lazy" />
+              <div class="titulo" ng-bind="icon.title"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Módulo de Mapa -->
+
+    <div class="col-lg-6r">
+      <div class="contact-right">
+        <iframe title="maps" class="contact-map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14620.70522267854!2d-46.7832994!3d-23.6338563!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce55ded01812c3%3A0xed073042b78305f9!2sImpacto%20Prime!5e0!3m2!1spt-BR!2sbr!4v1701782442365!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" alt="maps""
+          style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          alt="Map Image">
+        </iframe>
+      </div>
+    </div>
+ 
+    <div class="caixa-sobre-nos">
+      <div class="titulo-sobre">{{ txt1 }}</div>
+      <div class="sobre-nos">
+        <div class="sobre">{{ txt }}</div>
+      </div>
+    </div>
+
+    <footer id="footer">
+      <footer id="footer">
+        <div class="footer-content">
+            <img class="footer-logo" ng-src="{{ logoSrc }}" alt="Footer Logo" />
+            <ul class="footer-menu">
+                <li class="footer-menu-item" ng-repeat="item in ['Localização: Av Inocencio ceráfico 5005', 'Trabalhe Conosco: Alphaautocentermkt@gmail.com', 'Contato : (11)4141-4141']">{{ item }}</li>
+            </ul>
+            <div class="socials">
+                <i ng-repeat="icon in ['fab fa-instagram', 'fab fa-twitter', 'fab fa-facebook-f']" class="{{ icon }}"></i>
+            </div>
+        </div>
+        <div class="footer-info">
+            <ul class="footer-info-items">
+                <li class="footer-info-item" ng-repeat="item in ['Política de privacidade', 'Termos de serviço', 'Suporte']">{{ item }}</li>
+            </ul>
+            <div class="rights">
+                &copy; {{ currentYear }} Alpha Centro Automotivo
+                <img class="img-br" ng-src="{{ flag }}" alt="{{ country }}" class="country" />
+            </div>
+        </div>
+    </footer>
+    
+
+ 
+    <!-- Adicione isso no seu HTML onde deseja exibir o botão -->
+<button id="whatsapp-button" class="abrirWhatsApp('Seu Título Aqui')">
+  <img src="img/whatsapp.png" alt="WhatsApp" />
+</button>
+
+
+    <br><br><br><br><br><br><br><br>
+  </body>
+
+</html>
