@@ -13,7 +13,6 @@ body {
     background-size: cover;
     background-position: center;
     height: 100%;
-    margin: 0;
     font-family: 'Quicksand', sans-serif;
 }
 
@@ -302,7 +301,8 @@ p{
     align-items: center;
     width: 100%;
     height: auto;
-    animation: rotate 10s linear infinite;
+    /*animation: rotate 10s linear infinite;*/
+    position:relative;
 }
 
 @keyframes rotate {
@@ -627,6 +627,8 @@ font-size: 20px;
 }
 
 
+
+
 @media screen and (max-width: 768px) {
     /* Estilos para a barra de navegação */
     .navegation-scroll-nav ul {
@@ -644,7 +646,6 @@ font-size: 20px;
     }
 
     .section-1 video {
-        width: 100%;
         height: auto;
         border-radius: 15px;
     }
@@ -653,7 +654,6 @@ font-size: 20px;
     .row {
         margin-top: 30px;
     }
-
 
     .container {
         width: 100%;
@@ -674,66 +674,39 @@ font-size: 20px;
     }
 
     /* Estilos para o módulo de mapa */
-    .col-lg-6r {
-        width: 100%;
-    }
-
-    .col-lg-4 {
-        width: 100%;
-    }
-
-.contact-right{
-    width: 100%;
-}
-    
+    .col-lg-6r,
+    .col-lg-4,
+    .contact-right,
     .contact-map {
         width: 100%;
-       
     }
 
     /* Estilos para a seção "Sobre Nós" */
     .caixa-sobre-nos {
-        margin-left: 0;
+        margin-left: auto;
+        margin-right: auto;
         width: 100%;
+        text-align: center;
     }
 
     /* Estilos para o container-2 e row-serv */
-    .container-2 {
-        flex-direction: column;
-        align-items: center;
-    }
-
+    .container-2,
     .row-serv {
         flex-direction: column;
         align-items: center;
+        text-align: center;
     }
-    
-
 
     /* Estilos para o rodapé */
 
-    /* Estilos para o botão WhatsApp flutuante */
-    #whatsapp-button {
-        bottom: 10px;
-        right: 10px;
-    }
-}
-
-/* Adicione a regra de mídia para telas menores */
-@media screen and (max-width: 768px) {
     /* Estilos gerais para o footer */
-    #footer {
-    
-      
-        
-    }
-
     .footer-content {
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        text-align: center;
     }
 
     .footer-logo {
@@ -746,12 +719,12 @@ font-size: 20px;
         display: flex;
         align-items: center;
         justify-content: space-around;
-     
     }
 
     .footer-menu {
         margin-bottom: 15px;
-       margin-right: 300px;
+        margin-right: auto;
+        margin-left: auto;
     }
 
     .footer-menu-item {
@@ -760,7 +733,6 @@ font-size: 20px;
     }
 
     .socials {
-        
         margin-bottom: 15px;
     }
 
@@ -772,14 +744,19 @@ font-size: 20px;
     .footer-info-item {
         display: flex;
         align-items: center;
-        
         margin-bottom: 10px;
     }
 
-   
-
-    .img-br{
+    .img-br {
         margin-top: 15px;
-        margin-left: 250px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Estilos para o botão WhatsApp flutuante */
+    #whatsapp-button {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
     }
 }
