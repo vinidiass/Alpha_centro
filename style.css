@@ -632,11 +632,13 @@ font-size: 20px;
 @media screen and (max-width: 768px) {
     /* Estilos para a barra de navegação */
     .navegation-scroll-nav ul {
+        
         flex-direction: column;
         align-items: center;
     }
 
     .navegation-scroll-nav ul li {
+        max-height: 100px;
         margin-bottom: 10px;
     }
 
@@ -652,7 +654,7 @@ font-size: 20px;
 
     /* Estilos para a seção de pneus */
     .row {
-        margin-top: 30px;
+        margin-top: 210px;
     }
 
     .container {
