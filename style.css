@@ -109,9 +109,9 @@ a:hover:before {
 }
 
 video {
-    border-radius: 30px;
-    width: 900px;
-    height: 300px;
+    width: 100%; /* Ocupa 100% da largura em telas menores */
+    height: auto; /* Ajusta a altura automaticamente conforme a largura */
+    border-radius: 0; /* Remove a borda arredondada em telas menores, se necessário */
 }
 
 
@@ -378,6 +378,7 @@ summary {
     width: 55%;
     height: 80%;
 }
+
 .titulo-sobre{
     padding: 5px;
     margin-top: 30px;
@@ -618,17 +619,22 @@ font-size: 20px;
 
     /* Estilos para a seção de vídeo */
     .section-1 {
+        margin-top: 300px;
         padding: 30px 0;
     }
 
-    .section-1 video {
-        height: auto;
+    video {
+        width: 40%;
+        height: 60%;
+        max-width: 80%;
+        display: block;
+        margin: 0 auto;
         border-radius: 15px;
     }
 
     /* Estilos para a seção de pneus */
     .row {
-        margin-top: 75px;
+        margin-top: 10px;
     }
 
     .container {
@@ -646,7 +652,7 @@ font-size: 20px;
     }
 
     .container-form-pag .icons-img {
-        width: 100%;
+        width: 50%;
     }
 
     /* Estilos para o módulo de mapa */
